@@ -1,0 +1,186 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SkillSection from "../components/SkillSection.astro";
+import Education from "../components/Education.astro";
+import SocialButtons from "../components/SocialButtons.astro";
+import AboutMe from "../components/AboutMe.astro";
+
+const developmentSkills = [
+  "Python",
+  "Java",
+  "C++",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "NestJS",
+  "MongoDB",
+  "PostgreSQL",
+  "MySQL",
+  "React Native",
+  "Spring Boot",
+  "Git",
+  "Docker",
+  "Firebase",
+  "Google Cloud Platform",
+  "AWS",
+];
+
+const toolsAndOthers = [
+  "Metodologías Ágiles",
+  "Clean Code",
+  "SOLID",
+  "Microservicios",
+  "CI/CD",
+  "Testing",
+  "REST APIs",
+  "Sistemas Distribuidos",
+];
+---
+
+<Layout title="Aaron Navarro - Desarrollador Full Stack">
+  <main class="px-10 space-y-20">
+    <section class="flex flex-row items-center justify-between pt-10">
+      <Hero />
+      <img
+        src="/img/doddle.webp"
+        alt="Doddle"
+        class="hidden sm:flex w-1/3 h-auto ml-8 animate-float"
+      />
+    </section>
+
+    <section id="experiencia" class="space-y-8">
+      <h2 class="text-3xl font-bold text-white mb-6">Experiencia</h2>
+      <div class="space-y-6">
+        <ExperienceCard
+          title="Software Engineer Jr."
+          company="Atlas Tech Hub"
+          period="Junio 2024 - Presente"
+          description="Desarrollo de aplicaciones web y móviles escalables, enfocado en código limpio y mejores prácticas."
+          tags={[
+            "NextJS",
+            "React",
+            "NestJS",
+            "MongoDB",
+            "React Native",
+            "Firebase",
+          ]}
+          companyUrl="https://atlastechhub.com"
+        />
+        <ExperienceCard
+          title="Software Engineer Jr."
+          company="MasteryFive"
+          period="Abril 2024 - Octubre 2024"
+          description="Desarrollo de producto desde etapas tempranas, desplegando aplicaciones en GCP y participando en decisiones arquitectónicas."
+          tags={["Google Cloud", "Desarrollo Ágil", "Arquitectura de Software"]}
+          companyUrl="https://masteryfive.com"
+        />
+        <ExperienceCard
+          title="Mentor de Programación II"
+          company="Universidad de Ingeniería y Tecnología (UTEC)"
+          period="2 Ciclos Académicos"
+          description="Mentor voluntario del curso de Programación II, enfocado en Programación Orientada a Objetos (POO) utilizando C++. Ayudé a estudiantes a comprender conceptos fundamentales de POO y mejorar sus habilidades de programación."
+          tags={["C++", "POO", "Mentoring", "Voluntariado"]}
+        />
+      </div>
+    </section>
+
+    <section id="proyectos" class="space-y-8">
+      <h2 class="text-3xl font-bold text-white mb-6">Proyectos Destacados</h2>
+      <div class="space-y-6">
+        <ProjectCard
+          title="Peru360"
+          role="Co-Founder & CEO"
+          description="Plataforma innovadora que transforma la exploración de destinos turísticos en experiencias memorables mediante rutas personalizadas y recorridos interactivos."
+          tags={[
+            "v2 en Desarrollo",
+            "Arquitectura Escalable",
+            "Sistema de Rutas",
+            "Experiencias Interactivas",
+            "Comunidad",
+          ]}
+          projectUrl="https://peru360.art"
+          isInProgress={true}
+        />
+
+        <ProjectCard
+          title="DepGuardian"
+          role="Backend Developer"
+          description="Plataforma multi-tenant para la gestión integral de condominios. Facilita la administración de servicios, comunicación entre vecinos, y gestión de departamentos tanto para administradores como residentes."
+          tags={[
+            "Microservicios",
+            "NestJS",
+            "MongoDB",
+            "Mongoose",
+            "TypeScript",
+            "React Native",
+            "Testing",
+            "Multi-tenant",
+          ]}
+          githubUrl="https://github.com/DepGuardian"
+          isInProgress={true}
+        />
+
+        <ProjectCard
+          title="Work+"
+          role="Backend Developer & Project Lead"
+          description="Plataforma innovadora que conecta trabajadores independientes (electricistas, gasfiteros, etc.) con clientes potenciales, facilitando la expansión de su red de clientes y mejorando el acceso a servicios profesionales."
+          tags={[
+            "Spring Boot",
+            "PostgreSQL",
+            "ORM",
+            "React Native",
+            "REST APIs",
+            "Mobile Development",
+          ]}
+          githubUrl="https://github.com/BlackMonkcr/Work-Proyect_DBP"
+          achievement="🏆 Finalista en la competencia de Desarrollo Basado en Plataformas"
+        />
+      </div>
+    </section>
+
+    <section id="educacion" class="space-y-8">
+      <h2 class="text-3xl font-bold text-white mb-6">Educación</h2>
+      <Education />
+    </section>
+
+    <section id="habilidades" class="space-y-8">
+      <h2 class="text-3xl font-bold text-white mb-6">Habilidades</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <SkillSection title="Tecnologías" skills={developmentSkills} />
+        <SkillSection title="Herramientas y Otros" skills={toolsAndOthers} />
+      </div>
+    </section>
+
+	<section id="sobre-mi" class="space-y-8">
+		<AboutMe />
+	  </section>
+
+    <section id="contacto" class="space-y-8">
+      <h2 class="text-3xl font-bold text-white mb-6">Contacto</h2>
+      <SocialButtons />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

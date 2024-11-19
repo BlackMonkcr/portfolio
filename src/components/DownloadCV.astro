@@ -1,0 +1,37 @@
+---
+interface Props {
+  cvUrl: string;
+}
+
+const { cvUrl } = Astro.props;
+---
+<div class="relative group inline-block">
+  <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+  <a
+    href={cvUrl}
+    download="Aaron_Navarro_CV.pdf"
+    class="relative inline-flex items-center gap-2 px-6 py-3 bg-[#1e2028] hover:bg-[#2a2b31] border border-emerald-500/20 rounded-lg text-emerald-400 hover:text-emerald-300 transition-all duration-300 group"
+  >
+    <span class="flex items-center gap-2">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        class="size-5 transform group-hover:translate-y-0.5 transition-transform" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+      >
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="12" y1="18" x2="12" y2="12"/>
+        <line x1="9" y1="15" x2="15" y2="15"/>
+      </svg>
+      Descargar CV
+    </span>
+    <span class="absolute top-0 right-0 -mt-1 -mr-1 px-2 py-1 text-xs font-medium bg-emerald-500 text-emerald-100 rounded-full opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition-all">
+      PDF
+    </span>
+  </a>
+</div>
